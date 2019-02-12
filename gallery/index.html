@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content=" " />
+<meta name="description" content=" " />
+<title>Gellary</title>
+<LINK rel=stylesheet type=text/css href="css/lrtk.css" charset=utf-8 media=screen>
+<style>
+	
+.letter {
+  font-size: 4vmin;
+  text-shadow: 0 0 .25em red, 0 0 .35em red, 0 0 .45em transparent, 0 0 .55em transparent, 0 0 .65em transparent;
+}
+@media (min-width: 600px) {
+  .letter {
+    motion-offset: 0;
+    motion-path: path("m0, 0 c100, -150 200, -150 300, 0");
+  }
+}
+.letter:nth-child(1) {
+  -webkit-animation: twinkle 0.5s infinite 0.9s;
+          animation: twinkle 0.5s infinite 0.9s;
+  motion-offset: 5.55556%;
+}
+.letter:nth-child(2) {
+  -webkit-animation: twinkle 0.5s infinite 2.1s;
+          animation: twinkle 0.5s infinite 2.1s;
+  motion-offset: 11.11111%;
+}
+.letter:nth-child(3) {
+  -webkit-animation: twinkle 0.5s infinite 0.5s;
+          animation: twinkle 0.5s infinite 0.5s;
+  motion-offset: 16.66667%;
+}
+.letter:nth-child(4) {
+  -webkit-animation: twinkle 0.5s infinite 1.2s;
+          animation: twinkle 0.5s infinite 1.2s;
+  motion-offset: 22.22222%;
+}
+.letter:nth-child(5) {
+  -webkit-animation: twinkle 0.5s infinite 1.8s;
+          animation: twinkle 0.5s infinite 1.8s;
+  motion-offset: 27.77778%;
+}
+.letter:nth-child(6) {
+  -webkit-animation: twinkle 0.5s infinite 2.25s;
+          animation: twinkle 0.5s infinite 2.25s;
+  motion-offset: 33.33333%;
+}
+.letter:nth-child(7) {
+  -webkit-animation: twinkle 0.5s infinite 1.8s;
+          animation: twinkle 0.5s infinite 1.8s;
+  motion-offset: 38.88889%;
+}
+.letter:nth-child(8) {
+  -webkit-animation: twinkle 0.5s infinite 2.1s;
+          animation: twinkle 0.5s infinite 2.1s;
+  motion-offset: 44.44444%;
+}
+.letter:nth-child(9) {
+  -webkit-animation: twinkle 0.5s infinite 0.6s;
+          animation: twinkle 0.5s infinite 0.6s;
+  motion-offset: 50%;
+}
+.letter:nth-child(10) {
+  -webkit-animation: twinkle 0.5s infinite 0.3s;
+          animation: twinkle 0.5s infinite 0.3s;
+  motion-offset: 55.55556%;
+}
+.letter:nth-child(11) {
+  -webkit-animation: twinkle 0.5s infinite 1.5s;
+          animation: twinkle 0.5s infinite 1.5s;
+  motion-offset: 61.11111%;
+}
+.letter:nth-child(12) {
+  -webkit-animation: twinkle 0.5s infinite 1.35s;
+          animation: twinkle 0.5s infinite 1.35s;
+  motion-offset: 66.66667%;
+}
+.letter:nth-child(13) {
+  -webkit-animation: twinkle 0.5s infinite 0.75s;
+          animation: twinkle 0.5s infinite 0.75s;
+  motion-offset: 72.22222%;
+}
+.letter:nth-child(14) {
+  -webkit-animation: twinkle 0.5s infinite 0.5s;
+          animation: twinkle 0.5s infinite 0.5s;
+  motion-offset: 77.77778%;
+}
+.letter:nth-child(15) {
+  -webkit-animation: twinkle 0.5s infinite 0.6s;
+          animation: twinkle 0.5s infinite 0.6s;
+  motion-offset: 83.33333%;
+}
+.letter:nth-child(16) {
+  -webkit-animation: twinkle 0.5s infinite 0.6s;
+          animation: twinkle 0.5s infinite 0.6s;
+  motion-offset: 88.88889%;
+}
+.letter:nth-child(17) {
+  -webkit-animation: twinkle 0.5s infinite 0.9s;
+          animation: twinkle 0.5s infinite 0.9s;
+  motion-offset: 94.44444%;
+}
+.letter:nth-child(18) {
+  -webkit-animation: twinkle 0.5s infinite 1.65s;
+          animation: twinkle 0.5s infinite 1.65s;
+  motion-offset: 100%;
+}
+.letter:empty {
+  padding: 0 .2em;
+}
+</style>
+<SCRIPT type=text/javascript src="js/jquery-1.3.2.min.js"></SCRIPT>
+<SCRIPT type=text/javascript src="js/jquery.easing.1.2.js"></SCRIPT>
+<SCRIPT type=text/javascript>
+	// <![CDATA[
+		$(document).ready(function(){
+		
+			if ($('#pager a').size() <= 1) {
+				$('#pager').css('display', 'none');
+				return;
+			}
+		
+			var index = 0;
+			var selected = null;
+			var width = 667;
+			
+			$('#pager a').each(function(i){
+				if (i == 0) {
+					selected = $(this);
+					selected.find('img').attr('src', 'images/button-view-active.png');
+				}
+				$(this).click(function(){
+					index = i;
+					if (i == 0) {
+						document.getElementsByName("msg")[0].innerHTML="在七月的尾巴，遇见了你";
+					} else if (i == 1) {
+						document.getElementsByName("msg")[0].innerHTML="渐渐地，和你吃鸡变成一种习惯";
+					} else if (i == 2) {
+						document.getElementsByName("msg")[0].innerHTML="听着你动听的声音";
+					} else if (i == 3) {
+						document.getElementsByName("msg")[0].innerHTML="我们一起翻山越岭";
+					} else if (i == 4) {
+						document.getElementsByName("msg")[0].innerHTML="我们一起在度过黑夜";
+					} else if (i == 5) {
+						document.getElementsByName("msg")[0].innerHTML="我们一起欣赏美丽的风景";
+					} else if (i == 6) {
+						document.getElementsByName("msg")[0].innerHTML="吃鸡美丽的不只风景，还有你";
+					} else if (i == 7) {
+						document.getElementsByName("msg")[0].innerHTML="祝喵小坨七夕快乐~";
+					}
+					selected.find('img').attr('src', 'images/button-view.png');
+					selected = $(this);
+					selected.find('img').attr('src', 'images/button-view-active.png');
+					$('#images').animate({left:-(width * i)}, 500, 'easeOutQuad');
+					return false;
+				});
+			});
+			
+			$('#images').wrapInner('<a href="#" id="next"></a>');
+			$('#next').click(function(){
+				var a = $('#pager a').get(index + 1);
+				if (!a) {
+					return;
+				}
+				// if (!a) a = $('#pager a').get(0);
+				$(a).click();
+				return false;
+			});
+		});
+	// ]]>
+	</SCRIPT>
+</head>
+
+<body class=work-project>
+<div style="text-align:center;clear:both;">
+</div>
+<DIV id=content>
+<DIV id=project><!-- project navigation -->
+<P id=navigation><SPAN id=pager>
+<A href="images/1.jpg"><IMG alt=1 src="images/button-view.png" width=12 height=19></A>
+<A href="images/2.jpg"><IMG alt=2 src="images/button-view.png" width=12 height=19></A>
+<A href="images/3.jpg"><IMG alt=3 src="images/button-view.png" width=12 height=19></A>
+<A href="images/4.jpg"><IMG alt=4 src="images/button-view.png" width=12 height=19></A>
+<A href="images/5.jpg"><IMG alt=5 src="images/button-view.png" width=12 height=19></A>
+<A href="images/6.jpg"><IMG alt=5 src="images/button-view.png" width=12 height=19></A>
+<A href="images/7.jpg"><IMG alt=5 src="images/button-view.png" width=12 height=19></A>
+<A href="images/8.jpg"><IMG alt=5 src="images/button-view.png" width=12 height=19></A>
+</SPAN></P>
+<!-- project images -->
+<DIV id=mask>
+<DIV id=images>
+<IMG src="images/1.jpg" width=667 height=375><IMG src="images/2.jpg" width=667 height=375><IMG src="images/3.jpg" width=667 height=375><IMG src="images/4.jpg" width=667 height=375><IMG src="images/5.jpg" width=667 height=375><IMG src="images/6.jpg" width=667 height=375><IMG src="images/7.jpg" width=667 height=375><IMG src="images/8.jpg" width=667 height=375></DIV></DIV><!-- project title -->
+</DIV></DIV>
+<div id=content class="letter" name="msg" style="font-size: 20px">在七月的尾巴，遇见了你</div>
+</DIV>
+
+</body>
+</html>
